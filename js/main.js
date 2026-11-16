@@ -59,7 +59,7 @@
     setTimeout(heroIn, 250);
   }
   if (intro && !reduce) {
-    typeText($("#introType"), "OPENING CASE FILE SJ-2026-04817", 32, function () { setTimeout(endIntro, 380); });
+    typeText($("#introType"), "OPENING CASE FILE RH-2026-04817", 32, function () { setTimeout(endIntro, 380); });
   } else { endIntro(); }
 
   /* folder follows the mouse a little (desktop only) */
@@ -120,7 +120,7 @@
     var key = (q || "").trim().toUpperCase();
     if (!key) { noticeInput.focus(); return; }
     if (key === "NT-2026-0417") {
-      noticeResult.innerHTML = '<div class="letter"><span class="mono small t-green">GENUINE DOCUMENT</span><dl><dt>Type</dt><dd>Joining letter</dd><dt>Case</dt><dd class="mono">SJ-2026-04817</dd><dt>Issued</dt><dd>12 Nov 2026 by Control Room</dd><dt>Joining</dt><dd>18 Nov 2026, 10:00 AM</dd></dl><span class="stamp stamp--green">GENUINE</span></div>';
+      noticeResult.innerHTML = '<div class="letter"><span class="mono small t-green">GENUINE DOCUMENT</span><dl><dt>Type</dt><dd>Joining letter</dd><dt>Case</dt><dd class="mono">RH-2026-04817</dd><dt>Issued</dt><dd>12 Nov 2026 by Control Room</dd><dt>Joining</dt><dd>18 Nov 2026, 10:00 AM</dd></dl><span class="stamp stamp--green">GENUINE</span></div>';
     } else {
       noticeResult.innerHTML = '<div class="letter" style="background:#f7e4dd"><span class="mono small t-red">NO SUCH NOTICE</span><p class="small" style="margin:.5em 0 2.4em">We never issued <b class="mono">' + key.replace(/[<>&"]/g, "") + '</b>. Do not trust this letter or pay any fee for it.</p><span class="stamp stamp--red">NOT ISSUED</span></div>';
     }
@@ -269,10 +269,182 @@
   function addRow() {
     var st = ST[Math.floor(Math.random() * ST.length)];
     var tr = document.createElement("tr"); tr.className = "new";
-    tr.innerHTML = '<td class="mono">SJ-2026-0' + (rowN++) + '</td><td>W-' + (2300 + Math.floor(Math.random() * 90)) + '</td><td>E-0' + (720 + Math.floor(Math.random() * 60)) + '</td><td>AG-10' + (10 + Math.floor(Math.random() * 30)) + '</td><td><span class="pill ' + st[0] + '">' + st[1] + '</span></td>';
+    tr.innerHTML = '<td class="mono">RH-2026-0' + (rowN++) + '</td><td>W-' + (2300 + Math.floor(Math.random() * 90)) + '</td><td>E-0' + (720 + Math.floor(Math.random() * 60)) + '</td><td>AG-10' + (10 + Math.floor(Math.random() * 30)) + '</td><td><span class="pill ' + st[0] + '">' + st[1] + '</span></td>';
     rows.insertBefore(tr, rows.firstChild);
     if (rows.children.length > 6) rows.removeChild(rows.lastElementChild);
   }
+
+
+  /* ---------- PART 8: admin roles ---------- */
+  var ROLES = [
+    { nav: ["Cases", "Agents", "Verifications", "Leaves", "Tickets", "Payments", "Promo & wallets", "Refunds", "Blacklist"],
+      k: [["Registered workers", 48750], ["Registered employers", 32180], ["Active agreements", 12860], ["Banned accounts", 276]],
+      perm: "Chief Manager: full control, new officers and agents, fees and promo codes, permanent ban, all finance reports. Demo data." },
+    { nav: ["New matches", "Meetings", "Emergency leave", "Complaints", "Live alerts"],
+      k: [["New matches today", 64], ["Meetings fixed", 31], ["Leave requests", 6], ["Open complaints", 14]],
+      perm: "Control Room Officer: reviews new matches, fixes meetings, answers emergency leave and solves complaints. Demo data." },
+    { nav: ["Aadhaar check", "PAN check", "Shop proof", "Live photos", "Rejected"],
+      k: [["Pending documents", 2450], ["Approved today", 1230], ["Rejected (fake)", 37], ["Re-upload asked", 92]],
+      perm: "Document Officer: checks Aadhaar, PAN, shop proof and live photos, then approves or rejects. Demo data." },
+    { nav: ["My cases", "Site visits", "Inspection notes", "My QR ID", "Honorarium"],
+      k: [["My open cases", 12], ["Visits this week", 9], ["Successful checks", 245], ["Honorarium (Rs)", 12500]],
+      perm: "Field Agent: sees only cases in their own area, visits sites, writes inspection notes and tracks honorarium. Demo data." }
+  ];
+  var adminNav = $("#adminNav"), kpiEls = $$(".kpis > div"), rolePerm = $("#rolePerm");
+  function setRole(i) {
+    var r = ROLES[i];
+    adminNav.innerHTML = r.nav.map(function (n, j) { return '<a' + (j ? "" : ' class="is-on"') + ">" + n.replace(/&/g, "&amp;") + "</a>"; }).join("");
+    kpiEls.forEach(function (el, j) {
+      $("span", el).textContent = r.k[j][0];
+      var b = $("b", el); b.dataset.count = r.k[j][1];
+      if (hasGsap && !reduce) { var o = { v: 0 }; gsap.to(o, { v: r.k[j][1], duration: .9, ease: "power2.out", onUpdate: function () { b.textContent = Math.round(o.v).toLocaleString("en-IN"); } }); }
+      else b.textContent = r.k[j][1].toLocaleString("en-IN");
+    });
+    rolePerm.textContent = r.perm;
+    $$("#roles .chip").forEach(function (c) { c.classList.toggle("is-on", +c.dataset.role === i); });
+  }
+  $$("#roles .chip").forEach(function (c) { c.addEventListener("click", function () { setRole(+c.dataset.role); }); });
+  setRole(0);
+
+  /* ---------- PART 9: certificate QR (decorative pattern) ---------- */
+  var qr = $(".qr");
+  if (qr) {
+    var N = 21, cells = "", seed = 7;
+    var rnd = function () { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
+    var finder = function (x, y) { return (x < 7 && y < 7) || (x > 13 && y < 7) || (x < 7 && y > 13); };
+    for (var y = 0; y < N; y++) for (var x = 0; x < N; x++) {
+      var on;
+      if (finder(x, y)) { var fx = x > 13 ? x - 14 : x, fy = y > 13 ? y - 14 : y; on = fx === 0 || fy === 0 || fx === 6 || fy === 6 || (fx > 1 && fx < 5 && fy > 1 && fy < 5); }
+      else on = rnd() > .52;
+      if (on) cells += '<rect x="' + x + '" y="' + y + '" width="1" height="1"/>';
+    }
+    qr.innerHTML = '<svg viewBox="0 0 21 21" shape-rendering="crispEdges" fill="#081d4a">' + cells + "</svg>";
+  }
+
+  /* ---------- PART 9: three-channel alerts ---------- */
+  var alertBtn = $("#alertBtn"), chanItems = $$(".chan__item");
+  function runAlerts() {
+    chanItems.forEach(function (c) { c.classList.remove("on"); });
+    chanItems.forEach(function (c, i) { setTimeout(function () { c.classList.add("on"); }, 350 + i * 650); });
+  }
+  if (alertBtn) alertBtn.addEventListener("click", runAlerts);
+
+  /* ---------- PART 10: salary guarantee ---------- */
+  var salRange = $("#salRange"), feeRange = $("#feeRange"), opt = "a";
+  function salUpdate() {
+    var sal = +salRange.value, fee = opt === "a" ? +feeRange.value : 0, cut = Math.round(sal * fee / 100);
+    $("#salOut").textContent = rupee(sal);
+    $("#feeOut").textContent = fee ? fee + "%" : "-";
+    $("#slDep").textContent = rupee(sal);
+    $("#slFee").textContent = "−" + rupee(cut);
+    $("#slNet").textContent = rupee(sal - cut);
+    $("#feeWrap").style.display = opt === "a" ? "" : "none";
+    $("#slFeeRow").style.display = opt === "a" ? "" : "none";
+    $("#slNote").innerHTML = opt === "a"
+      ? '<svg class="ico t-green"><use href="#i-shield"/></svg> Rozgar Hub is responsible for paying the full salary on time.'
+      : "Paid directly by the employer to the worker's bank. Both agree; the platform keeps the record but gives no salary guarantee.";
+    cycleUpdate();
+  }
+  $$("#payOpt button").forEach(function (b) {
+    b.addEventListener("click", function () { opt = b.dataset.opt; $$("#payOpt button").forEach(function (x) { x.classList.toggle("is-on", x === b); }); salUpdate(); });
+  });
+  if (salRange) { salRange.addEventListener("input", salUpdate); feeRange.addEventListener("input", salUpdate); }
+
+  /* deposit calendar (December) */
+  var month = $("#month");
+  if (month) {
+    var hd = ["M", "T", "W", "T", "F", "S", "S"], mh = "";
+    hd.forEach(function (h) { mh += '<span class="h">' + h + "</span>"; });
+    var startPad = (new Date(2026, 11, 1).getDay() + 6) % 7;
+    for (var i = 0; i < startPad; i++) mh += "<span></span>";
+    for (var dd = 1; dd <= 14; dd++) mh += '<span class="' + (dd === 2 || dd === 3 ? "dd" : "") + '" data-d="' + dd + '">' + dd + "</span>";
+    month.innerHTML = mh;
+  }
+  var lateBtn = $("#lateBtn"), late = false;
+  if (lateBtn) lateBtn.addEventListener("click", function () {
+    late = !late;
+    var pill = $("#decPill");
+    pill.className = "pill " + (late ? "pill--red" : "pill--blue");
+    pill.textContent = late ? "Late 2 days" : "Waiting";
+    $$("#month [data-d='4'], #month [data-d='5']").forEach(function (d) { d.classList.toggle("late", late); });
+    lateBtn.textContent = late ? "Reset" : "Simulate late deposit";
+    var fz = $("#frozen");
+    if (late) stampIn(fz); else if (hasGsap) gsap.to(fz, { opacity: 0, duration: .2 }); else fz.style.opacity = 0;
+  });
+
+  /* PART 11: edit salary */
+  var acceptBtn = $("#acceptBtn");
+  if (acceptBtn) acceptBtn.addEventListener("click", function () {
+    $("#editNotif").classList.add("done"); acceptBtn.disabled = true; acceptBtn.textContent = "Accepted ✓";
+    stampIn($("#applied"));
+  });
+
+  /* PART 11: pay cycle + advance */
+  var cyc = 30;
+  function cycleUpdate() {
+    if (!salRange) return;
+    var sal = +salRange.value, worked = cyc === 7 ? 6 : cyc === 15 ? 13 : 26;
+    $("#cyDays").textContent = worked + " / " + cyc;
+    $("#cyPay").textContent = rupee(Math.round(sal / 30 * worked));
+    var max = Math.floor(sal * 0.4 / 500) * 500, ar = $("#advRange");
+    ar.max = max; if (+ar.value > max) ar.value = max;
+    $("#advOut").textContent = rupee(+ar.value);
+  }
+  $$("#cycle button").forEach(function (b) {
+    b.addEventListener("click", function () { cyc = +b.dataset.c; $$("#cycle button").forEach(function (x) { x.classList.toggle("is-on", x === b); }); cycleUpdate(); });
+  });
+  var advRange = $("#advRange"), advBtn = $("#advBtn");
+  if (advRange) advRange.addEventListener("input", function () { $("#advOut").textContent = rupee(+advRange.value); $("#advOk").textContent = ""; });
+  if (advBtn) advBtn.addEventListener("click", function () {
+    var ok = $("#advOk"); ok.textContent = "Sent to employer for approval...";
+    setTimeout(function () { ok.textContent = "✓ Advance " + rupee(+advRange.value) + " approved. It will be adjusted in the next pay."; }, 1300);
+  });
+  salUpdate();
+
+  /* PART 10: tools */
+  var TOOLS = [
+    "<b>Replacement request.</b> Worker or employer can ask the Control Room for a replacement. A new verified match is offered within 48 hours, under the same case file.",
+    "<b>Resign &amp; final settlement.</b> Worker submits resignation in the app. Pending salary is settled the same day and the security deposit is released.",
+    "<b>Account pause.</b> Stop the account for some time and start it again later. All records and the badge stay safe.",
+    "<b>Work history.</b> Ravi K.: 3 jobs, 480 days, rating 4.8. Store E-0716 hired 5 workers through Rozgar Hub. Visible to the Control Room."
+  ];
+  $$("#tools button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      $$("#tools button").forEach(function (x) { x.classList.toggle("is-on", x === b); });
+      var out = $("#toolOut"); out.innerHTML = TOOLS[+b.dataset.t];
+      if (hasGsap && !reduce) gsap.from(out, { y: 8, opacity: 0, duration: .35 });
+    });
+  });
+
+  /* ---------- Hindi audio guide ("sune") ---------- */
+  var listen = $("#listen"), synth = window.speechSynthesis, speaking = false, toast = null;
+  function currentSection() {
+    var best = null, bestVis = 0;
+    $$("section[data-say]").forEach(function (sec) {
+      var r = sec.getBoundingClientRect(), vis = Math.min(r.bottom, innerHeight) - Math.max(r.top, 0);
+      if (vis > bestVis) { bestVis = vis; best = sec; }
+    });
+    return best;
+  }
+  function showToast(t) {
+    if (!toast) { toast = document.createElement("div"); toast.className = "listen__toast hi"; document.body.appendChild(toast); }
+    toast.textContent = t; toast.classList.add("show");
+  }
+  function stopSpeak() { speaking = false; listen.classList.remove("on"); if (synth) synth.cancel(); if (toast) toast.classList.remove("show"); }
+  if (listen) listen.addEventListener("click", function () {
+    if (speaking) { stopSpeak(); return; }
+    var sec = currentSection(); if (!sec) return;
+    var text = sec.dataset.say;
+    showToast(text);
+    if (!synth || typeof SpeechSynthesisUtterance === "undefined") { setTimeout(function () { toast.classList.remove("show"); }, 6000); return; }
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = "hi-IN"; u.rate = .95;
+    var v = synth.getVoices().filter(function (x) { return /^hi/i.test(x.lang); })[0];
+    if (v) u.voice = v;
+    u.onend = u.onerror = stopSpeak;
+    speaking = true; listen.classList.add("on");
+    synth.cancel(); synth.speak(u);
+  });
 
   /* =====================================================
      SCROLL STORY (GSAP)
@@ -293,6 +465,9 @@
     $$("#dosSteps li").forEach(function (l) { l.classList.add("on"); });
     $$(".icard").forEach(function (c) { c.classList.add("in"); });
     $$("[data-count]").forEach(function (k) { k.textContent = k.dataset.count; });
+    $$("#claim li").forEach(function (l) { l.classList.add("on"); });
+    $$(".chan__item").forEach(function (c) { c.classList.add("on"); });
+    gsap.set("#certSeal", { opacity: 1 });
     return;
   }
 
@@ -390,7 +565,7 @@
   ScrollTrigger.create({
     trigger: "#admin", start: "top 75%", end: "bottom top",
     onEnter: function () {
-      $$("[data-count]").forEach(function (k) { var o = { v: 0 }; gsap.to(o, { v: +k.dataset.count, duration: 1.4, ease: "power2.out", onUpdate: function () { k.textContent = Math.round(o.v); } }); });
+      $$("[data-count]").forEach(function (k) { var o = { v: 0 }; gsap.to(o, { v: +k.dataset.count, duration: 1.4, ease: "power2.out", onUpdate: function () { k.textContent = Math.round(o.v).toLocaleString("en-IN"); } }); });
       clearInterval(rowTimer); rowTimer = setInterval(addRow, 3500);
     },
     onLeave: function () { clearInterval(rowTimer); },
@@ -408,6 +583,17 @@
   gsap.set("#closedStamp", { opacity: 0 });
   ScrollTrigger.create({ trigger: "#closedStamp", start: "top 88%", once: true, onEnter: function () { stampIn($("#closedStamp")); } });
   gsap.from(".closed__h", { opacity: 0, y: 40, duration: 1, ease: "power3.out", scrollTrigger: { trigger: ".closed__h", start: "top 85%" } });
+
+
+  /* certificate gets its seal, alerts fire, claim steps light up */
+  ScrollTrigger.create({ trigger: "#cert", start: "top 70%", once: true, onEnter: function () { setTimeout(function () { stampIn($("#certSeal")); }, 500); } });
+  gsap.from("#cert .cert__paper", { rotateX: 25, y: 60, opacity: 0, duration: 1.1, ease: "power3.out", transformPerspective: 1200, scrollTrigger: { trigger: "#cert", start: "top 85%" } });
+  ScrollTrigger.create({ trigger: "#chan", start: "top 80%", once: true, onEnter: runAlerts });
+  ScrollTrigger.create({
+    trigger: "#claim", start: "top 80%", once: true,
+    onEnter: function () { $$("#claim li").forEach(function (l, i) { setTimeout(function () { l.classList.add("on"); }, 300 + i * 600); }); }
+  });
+  gsap.from(".lvl", { y: 30, opacity: 0, stagger: .1, duration: .6, ease: "power3.out", scrollTrigger: { trigger: ".levels", start: "top 85%" } });
 
   window.addEventListener("load", function () { ScrollTrigger.refresh(); });
 })();

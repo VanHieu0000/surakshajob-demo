@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SurakshaJob - Every Job Is a Verified Case</title>
+<title>Rozgar Hub - Safe Jobs, Verified People</title>
 <meta name="description" content="Demo concept for a secure job provider and verification portal: blind matching, control room, digital case files, duty tracking and verified agents.">
-<meta name="theme-color" content="#0e1a2b">
+<meta name="theme-color" content="#081d4a">
 <script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Mukta:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23c8371d'/%3E%3Cpath d='M20 33l8 8 16-17' stroke='%23f4ecdc' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230d3b9e'/%3E%3Cpath d='M20 33l8 8 16-17' stroke='%23f2b705' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -28,30 +28,38 @@
   <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" fill="currentColor"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"/></symbol>
+  <symbol id="i-logo" viewBox="0 0 48 52"><path d="M24 2l20 7v15c0 13-8.5 22-20 26C12.5 46 4 37 4 24V9z" fill="#0d3b9e" stroke="#f2b705" stroke-width="3"/><path d="M17 37V15h9c4.5 0 7.5 2.6 7.5 6.6 0 3-1.7 5.1-4.4 6l5.2 9.4h-5.6l-4.6-8.7H22V37zm5-12.7h3.6c2 0 3.2-1 3.2-2.7s-1.2-2.6-3.2-2.6H22z" fill="#f2b705"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 1112 0v5l2 2H4zM10 20a2 2 0 004 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-sms" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 10h8M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.6-1.2A9 9 0 1012 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 010 7M18.5 6a8.5 8.5 0 010 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="11" r="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 16c.6-1.4 1.7-2 3-2s2.4.6 3 2M14 10h4M14 13h3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-face" viewBox="0 0 24 24"><path d="M3 8V5a2 2 0 012-2h3M16 3h3a2 2 0 012 2v3M21 16v3a2 2 0 01-2 2h-3M8 21H5a2 2 0 01-2-2v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7.5 17.5c1-2 2.6-3 4.5-3s3.5 1 4.5 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5.6 5.6l12.8 12.8" stroke="currentColor" stroke-width="2"/></symbol>
 </svg>
 
 <!-- ============ INTRO ============ -->
 <div class="intro" id="intro" aria-hidden="true">
   <div class="intro__inner">
-    <svg class="intro__seal"><use href="#i-seal"/></svg>
+    <svg class="intro__seal"><use href="#i-logo"/></svg>
     <p class="mono intro__line"><span id="introType"></span><i class="caret"></i></p>
   </div>
 </div>
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
-  <a href="#top" class="brand" aria-label="SurakshaJob home">
-    <svg class="brand__seal"><use href="#i-seal"/></svg>
-    <span>Suraksha<b>Job</b></span>
+  <a href="#top" class="brand" aria-label="Rozgar Hub home">
+    <svg class="brand__logo"><use href="#i-logo"/></svg>
+    <span class="brand__txt">Rozgar <b>Hub</b><small>रोज़गार हब</small></span>
   </a>
   <nav class="nav__links" aria-label="Sections">
     <a href="#verify">Verify</a>
-    <a href="#app">The App</a>
-    <a href="#match">Blind Match</a>
+    <a href="#app">App</a>
     <a href="#dossier">Case File</a>
     <a href="#duty">Duty</a>
-    <a href="#fees">Fees</a>
-    <a href="#control">Control Room</a>
+    <a href="#control">Admin</a>
+    <a href="#salary">Salary</a>
   </nav>
   <a href="#verify" class="btn btn--stamp btn--sm">Verify an agent</a>
 </header>
@@ -59,18 +67,19 @@
 <main id="top">
 
 <!-- ============ HERO ============ -->
-<section class="hero dark" id="hero">
+<section class="hero dark" id="hero" data-say="रोज़गार हब में आपका स्वागत है। यहाँ हर नौकरी एक केस है, और हर केस नियंत्रण कक्ष द्वारा सत्यापित होता है। कोई सीधा फ़ोन नहीं, कोई फर्जी एजेंट नहीं।">
   <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/video/market.jpg">
     <source src="assets/video/market.mp4" type="video/mp4">
   </video>
   <div class="hero__shade"></div>
   <div class="hero__grid wrap">
     <div class="hero__copy">
-      <p class="mono kicker hero__kicker"><span class="dot"></span> CASE NO. <span id="heroCase">SJ-2026-04817</span> &nbsp;/&nbsp; STATUS: UNDER VERIFICATION</p>
+      <p class="mono kicker hero__kicker"><span class="dot"></span> CASE NO. <span id="heroCase">RH-2026-04817</span> &nbsp;/&nbsp; STATUS: UNDER VERIFICATION</p>
       <h1 class="display hero__title">
         <span class="line"><span>Every job is a case.</span></span>
         <span class="line"><span><em>Every case is verified.</em></span></span>
       </h1>
+      <p class="hi hero__hi">हर नौकरी एक केस। हर केस सत्यापित। <span>सुरक्षित रोज़गार, सुरक्षित भविष्य</span></p>
       <p class="hero__sub">A job platform for India where workers and employers never meet blind. No direct calls, no fake agents, no fake letters. Our Control Room checks every person, every document and every meeting first.</p>
       <div class="hero__cta">
         <a href="#dossier" class="btn btn--stamp">Open a case file</a>
@@ -85,7 +94,7 @@
         <div class="hfile__front">
           <span class="hfile__tab mono">CASE FILE</span>
           <div class="hfile__label">
-            <span class="mono">SJ-2026-04817</span>
+            <span class="mono">RH-2026-04817</span>
             <strong>Shop Assistant &middot; Jaipur</strong>
             <span class="mono small">WORKER #W-2291 &harr; EMPLOYER #E-0716</span>
           </div>
@@ -98,7 +107,7 @@
 </section>
 
 <!-- ============ PROBLEM ============ -->
-<section class="problem paper" id="problem">
+<section class="problem paper" id="problem" data-say="फर्जी एजेंट, नकली नियुक्ति पत्र और रजिस्ट्रेशन के नाम पर ठगी। रोज़गार हब में यह सब नहीं चलेगा।">
   <div class="wrap">
     <p class="mono kicker">THE COMPLAINT REGISTER</p>
     <h2 class="display problem__h">Every week, someone in India loses a job, a fee or their trust to</h2>
@@ -110,17 +119,18 @@
     </ul>
     <div class="problem__end">
       <span class="stamp stamp--red" id="notHere">NOT HERE</span>
-      <p>SurakshaJob puts a <b>Control Room</b> between every worker and every employer. Nobody gets a phone number until an agent has checked the people and the papers.</p>
+      <p>Rozgar Hub puts a <b>Control Room</b> between every worker and every employer. Nobody gets a phone number until an agent has checked the people and the papers.</p>
     </div>
   </div>
 </section>
 
 <!-- ============ EXHIBIT A: VERIFY ============ -->
-<section class="verify paper paper--2" id="verify">
+<section class="verify paper paper--2" id="verify" data-say="किसी भी प्रतिनिधि की जाँच करें। मोबाइल नंबर या रोल नंबर डालें, या क्यूआर कोड स्कैन करें। स्क्रीन पर असली या फर्जी साफ़ दिखेगा। नियुक्ति पत्र की संख्या डालकर उसकी सच्चाई भी जाँचें।">
   <div class="wrap verify__grid">
     <div class="verify__copy reveal">
-      <p class="mono kicker">EXHIBIT A &middot; NO LOGIN NEEDED</p>
+      <p class="mono kicker"><span class="part">PART 1</span> NO LOGIN NEEDED</p>
       <h2 class="display">Somebody at your door says they are our agent?<br><em>Check in five seconds.</em></h2>
+      <p class="hi sub-hi">प्रतिनिधि की जाँच करें &middot; सूचना व नियुक्ति पत्र की जाँच करें</p>
       <p>Anyone can verify a field agent by mobile number, roll number or QR code, and see the photo, ID and a clear <b class="t-green">REAL</b> or <b class="t-red">FAKE</b>. Got a notice or joining letter? Enter its tracking number and see if we really issued it.</p>
       <ul class="ticks">
         <li><svg class="ico"><use href="#i-check"/></svg> Photo, roll number, area and validity</li>
@@ -172,11 +182,12 @@
 </section>
 
 <!-- ============ EXHIBIT B: THE APP ============ -->
-<section class="app paper" id="app">
+<section class="app paper" id="app" data-say="मोबाइल नंबर और ओटीपी से लॉगिन करें। मुख्य स्क्रीन पर चार बड़े बटन हैं: नौकरी खोजें, कर्मचारी की आवश्यकता दर्ज करें, सहायता एवं जानकारी, और दस्तावेज़ सत्यापन।">
   <div class="wrap">
     <div class="app__head reveal">
-      <p class="mono kicker">EXHIBIT B &middot; THE ANDROID APP</p>
+      <p class="mono kicker"><span class="part">PART 2</span> THE ANDROID APP</p>
       <h2 class="display">Four boxes. <em>Zero confusion.</em></h2>
+      <p class="hi sub-hi">आसान हिंदी, बड़े बटन, हर पेज पर &ldquo;सुनें&rdquo; बटन</p>
       <p>Built for people who are new to apps: big buttons, simple words, and OTP login with just a mobile number.</p>
     </div>
 
@@ -227,8 +238,8 @@
             <div class="scr is-on" data-s="0">
               <div class="scr__login">
                 <svg class="scr__seal"><use href="#i-seal"/></svg>
-                <h4>SurakshaJob</h4>
-                <p class="muted small">Safe jobs. Verified people.</p>
+                <h4>Rozgar Hub</h4>
+                <p class="muted small hi">सुरक्षित नौकरी, सुरक्षित भविष्य</p>
                 <label class="small muted">Mobile number</label>
                 <div class="pfield">+91 98765 43210</div>
                 <label class="small muted">Enter OTP</label>
@@ -241,14 +252,14 @@
             <!-- 1 dashboard -->
             <div class="scr" data-s="1">
               <div class="scr__pad">
-                <p class="muted small">Namaste,</p>
+                <p class="muted small hi">नमस्ते,</p>
                 <h4>Ravi Kumar</h4>
-                <div class="pcase mono">Active case &middot; SJ-2026-04817</div>
+                <div class="pcase mono">Active case &middot; RH-2026-04817</div>
                 <div class="boxes">
-                  <div class="box box--1"><svg class="ico"><use href="#i-search"/></svg><b>Find a Job</b><span>location, salary, stay</span></div>
-                  <div class="box box--2"><svg class="ico"><use href="#i-shop"/></svg><b>Employer Desk</b><span>post requirement</span></div>
-                  <div class="box box--3"><svg class="ico"><use href="#i-help"/></svg><b>Support &amp; Info</b><span>help, terms, rules</span></div>
-                  <div class="box box--4"><svg class="ico"><use href="#i-doc"/></svg><b>Doc Verification</b><span>background check</span></div>
+                  <div class="box box--1"><svg class="ico"><use href="#i-search"/></svg><b>Find Jobs</b><span class="hi">नौकरी खोजें</span></div>
+                  <div class="box box--2"><svg class="ico"><use href="#i-shop"/></svg><b>Post Requirement</b><span class="hi">कर्मचारी की आवश्यकता</span></div>
+                  <div class="box box--3"><svg class="ico"><use href="#i-help"/></svg><b>Help &amp; Info</b><span class="hi">सहायता एवं जानकारी</span></div>
+                  <div class="box box--4"><svg class="ico"><use href="#i-doc"/></svg><b>Document Verify</b><span class="hi">दस्तावेज़ सत्यापन</span></div>
                 </div>
                 <div class="prow"><span class="ptag"><svg class="ico"><use href="#i-qr"/></svg> Verify agent</span><span class="ptag"><svg class="ico"><use href="#i-doc"/></svg> Track notice</span></div>
               </div>
@@ -296,7 +307,7 @@
               <div class="scr__pad center">
                 <div class="pstamp">MATCHED</div>
                 <p class="muted small">Your case ID</p>
-                <h4 class="mono">SJ-2026-04817</h4>
+                <h4 class="mono">RH-2026-04817</h4>
                 <ol class="ptimeline">
                   <li class="done">Criteria matched</li>
                   <li class="done">Documents checked</li>
@@ -314,11 +325,12 @@
 </section>
 
 <!-- ============ EXHIBIT C: BLIND MATCH ============ -->
-<section class="match dark" id="match">
+<section class="match dark" id="match" data-say="कर्मचारी और मालिक एक दूसरे का नंबर नहीं देख सकते। हर बातचीत नियंत्रण कक्ष के माध्यम से होती है, और प्रतिनिधि की मौजूदगी में भेंट तय होती है।">
   <div class="wrap">
     <div class="match__head reveal">
-      <p class="mono kicker">EXHIBIT C &middot; BLIND MATCHING</p>
+      <p class="mono kicker"><span class="part">PART 2</span> BLIND MATCHING &amp; CONTROL ROOM</p>
       <h2 class="display">They never see each other's number.<br><em>Every line goes through us.</em></h2>
+      <p class="hi sub-hi">आपका नंबर और निजी जानकारी पूरी तरह गोपनीय</p>
     </div>
     <div class="board" id="board">
       <div class="person person--w">
@@ -341,7 +353,7 @@
           </svg>
           <svg class="hub__icon"><use href="#i-seal"/></svg>
         </div>
-        <div class="hub__case mono" id="hubCase">CASE <span>SJ-2026-04817</span></div>
+        <div class="hub__case mono" id="hubCase">CASE <span>RH-2026-04817</span></div>
       </div>
 
       <div class="wire wire--r"><i></i></div>
@@ -373,10 +385,10 @@
 </section>
 
 <!-- ============ DOSSIER (WOW) ============ -->
-<section class="dossier dark" id="dossier">
+<section class="dossier dark" id="dossier" data-say="हर केस की एक स्थायी डिजिटल फाइल बनती है। इसमें आधार, पैन, तीन पक्षों का समझौता और प्रतिनिधि की टिप्पणी सुरक्षित रहती है। मुहर लगने के बाद कोई इसे बदल नहीं सकता।">
   <div class="dossier__pin">
     <div class="dossier__caption">
-      <p class="mono kicker">THE DIGITAL DOSSIER</p>
+      <p class="mono kicker"><span class="part">PART 3</span> THE DIGITAL DOSSIER</p>
       <h2 class="display" id="dosTitle">A permanent record for every case.</h2>
       <ol class="dos__steps mono" id="dosSteps">
         <li data-i="0">File opened</li>
@@ -415,7 +427,7 @@
         <div class="folder__front" id="folderFront">
           <span class="folder__tab mono">CASE FILE</span>
           <div class="folder__label">
-            <span class="mono">SJ-2026-04817</span>
+            <span class="mono">RH-2026-04817</span>
             <strong>Ravi K. &harr; Verified Store</strong>
             <span class="mono small">OPENED 14 NOV 2026 &middot; JAIPUR</span>
           </div>
@@ -428,11 +440,12 @@
 </section>
 
 <!-- ============ DUTY ============ -->
-<section class="duty paper" id="duty">
+<section class="duty paper" id="duty" data-say="ड्यूटी प्रारंभ करें और ड्यूटी समाप्त करें बटन से रोज़ के काम के घंटे और ओवरटाइम अपने आप गिने जाते हैं। आपातकालीन छुट्टी का जवाब बीस से तीस मिनट में मिलता है। सामान्य छुट्टी तीन से चार दिन पहले लेनी होती है।">
   <div class="wrap">
     <div class="duty__head reveal">
-      <p class="mono kicker">CHAPTER 4 &middot; ON DUTY</p>
+      <p class="mono kicker"><span class="part">PART 4</span> DUTY, LEAVE &amp; VIDEO REVIEW</p>
       <h2 class="display">After joining, the file stays open.<br><em>Every hour is on record.</em></h2>
+      <p class="hi sub-hi">ड्यूटी प्रारंभ करें &middot; ड्यूटी समाप्त करें &middot; छुट्टी प्रबंधन</p>
     </div>
     <div class="duty__grid">
       <article class="card timer reveal">
@@ -479,11 +492,12 @@
 </section>
 
 <!-- ============ RULES ============ -->
-<section class="rules dark" id="rules">
+<section class="rules dark" id="rules" data-say="फर्जी दस्तावेज़ देने वालों पर भारी जुर्माना और स्थायी प्रतिबंध लगता है। मोबाइल, पहचान, डिवाइस और चेहरा, चारों स्तर पर ब्लैकलिस्ट। ईमानदार सदस्यों को सुरक्षा कवच मिलता है।">
   <div class="wrap">
     <div class="rules__head reveal">
-      <p class="mono kicker">CHAPTER 5 &middot; THE RULE BOOK</p>
+      <p class="mono kicker"><span class="part">PART 5 + 6</span> THE RULE BOOK</p>
       <h2 class="display">Honest people are protected.<br><em>Fraud is stamped out.</em></h2>
+      <p class="hi sub-hi">धोखाधड़ी पर शून्य सहनशीलता &middot; ईमानदार के साथ सुरक्षा कवच</p>
     </div>
     <div class="rules__grid">
       <article class="icard reveal">
@@ -492,11 +506,11 @@
           <span class="ban__stamp">BLACKLISTED</span>
         </div>
         <h3>Zero tolerance</h3>
-        <p>Proven fraud or fake documents mean a heavy penalty and a permanent ban. Their mobile number, Aadhaar and device can never register again.</p>
+        <p>Fake documents, theft or breaking the agreement: the security deposit is seized, a heavy penalty applies and the account is banned forever.</p>
       </article>
       <article class="icard reveal">
         <div class="shield"><svg><use href="#i-shield"/></svg><span class="mono">PROTECTED</span></div>
-        <h3>Insurance &amp; legal tier</h3>
+        <h3>Suraksha Kavach</h3>
         <p>Optional plan. Insured accounts get legal help, police and administrative coordination, and support recovering unpaid salary.</p>
       </article>
       <article class="icard reveal">
@@ -518,15 +532,25 @@
         <p>Both sides rate each other after every job. Low ratings lower your visibility and trigger an account review.</p>
       </article>
     </div>
+    <div class="levels reveal">
+      <p class="mono kicker">PERMANENT BAN &middot; 4 LEVELS</p>
+      <div class="levels__row">
+        <div class="lvl"><svg><use href="#i-phone"/></svg><b>Level 1 &middot; Mobile</b><span>Number blacklisted. OTP is never sent again.</span></div>
+        <div class="lvl"><svg><use href="#i-id"/></svg><b>Level 2 &middot; ID</b><span>Aadhaar / PAN blocked on the main server.</span></div>
+        <div class="lvl"><svg><use href="#i-ban"/></svg><b>Level 3 &middot; Device</b><span>The phone's hardware ID is blocked.</span></div>
+        <div class="lvl"><svg><use href="#i-face"/></svg><b>Level 4 &middot; Face</b><span>Photo kept on file. A new sign-up with it is flagged.</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ============ FEES ============ -->
-<section class="fees paper" id="fees">
+<section class="fees paper" id="fees" data-say="प्रोमो कोड और रेफरल कोड से शुल्क कम होता है। हर भुगतान की पक्की डिजिटल रसीद तुरंत ईमेल पर मिलती है।">
   <div class="wrap fees__grid">
     <div class="fees__calc reveal">
-      <p class="mono kicker">CHAPTER 6 &middot; FEES, CODES &amp; RECEIPTS</p>
+      <p class="mono kicker"><span class="part">PART 7</span> PROMO, REFERRAL &amp; RECEIPTS</p>
       <h2 class="display">Fair fees. <em>A receipt for every rupee.</em></h2>
+      <p class="hi sub-hi">प्रोमो कोड से छूट &middot; रेफरल से दोनों को लाभ</p>
 
       <div class="calc">
         <div class="calc__row"><span>Registration fee</span><b class="mono" id="baseFee">&#8377;500</b></div>
@@ -552,7 +576,7 @@
     <div class="fees__receipt">
       <div class="printer"><i></i></div>
       <div class="rclip"><div class="receipt" id="receipt">
-        <div class="receipt__h"><svg><use href="#i-seal"/></svg><b>SurakshaJob</b><span class="mono tiny">FEE RECEIPT &middot; RCPT-2026-11-0932</span></div>
+        <div class="receipt__h"><svg><use href="#i-seal"/></svg><b>Rozgar Hub</b><span class="mono tiny">FEE RECEIPT &middot; RCPT-2026-11-0932</span></div>
         <div class="receipt__row"><span>Verification &amp; registration</span><span class="mono" id="rFee">&#8377;500.00</span></div>
         <div class="receipt__row"><span>Discount</span><span class="mono" id="rDisc">&minus;&#8377;0.00</span></div>
         <div class="receipt__row"><span>GST included</span><span class="mono">&#10003;</span></div>
@@ -579,16 +603,23 @@
 </section>
 
 <!-- ============ CONTROL ROOM ============ -->
-<section class="control dark" id="control">
+<section class="control dark" id="control" data-say="मुख्य नियंत्रण पैनल में चार स्तर के अधिकारी हैं: मुख्य व्यवस्थापक, नियंत्रण कक्ष अधिकारी, दस्तावेज़ सत्यापन अधिकारी और क्षेत्र प्रतिनिधि। हर केस की लाइव निगरानी होती है।">
   <div class="wrap">
     <div class="control__head reveal">
-      <p class="mono kicker">CHAPTER 7 &middot; THE CONTROL ROOM (WEB ADMIN)</p>
+      <p class="mono kicker"><span class="part">PART 8</span> MAIN CONTROL PANEL (WEB ADMIN)</p>
       <h2 class="display">One screen that <em>sees every case.</em></h2>
+      <p class="hi sub-hi">मुख्य नियंत्रण पैनल &middot; चार स्तरीय अधिकार विभाजन</p>
+    </div>
+    <div class="roles" id="roles">
+      <button class="chip is-on" data-role="0" type="button">Level 1 &middot; Chief Manager</button>
+      <button class="chip" data-role="1" type="button">Level 2 &middot; Control Room</button>
+      <button class="chip" data-role="2" type="button">Level 3 &middot; Document Officer</button>
+      <button class="chip" data-role="3" type="button">Level 4 &middot; Field Agent</button>
     </div>
     <div class="admin reveal" id="admin">
       <aside class="admin__side">
         <div class="admin__brand"><svg><use href="#i-seal"/></svg> Control Room</div>
-        <a class="is-on">Cases</a><a>Agents</a><a>Verifications</a><a>Leaves</a><a>Tickets</a><a>Payments</a><a>Promo &amp; wallets</a><a>Refunds</a><a>Blacklist</a>
+        <div class="admin__nav" id="adminNav"><a class="is-on">Cases</a><a>Agents</a><a>Verifications</a><a>Leaves</a><a>Tickets</a><a>Payments</a><a>Promo &amp; wallets</a><a>Refunds</a><a>Blacklist</a></div>
       </aside>
       <div class="admin__main">
         <div class="kpis">
@@ -601,28 +632,204 @@
           <table class="cases">
             <thead><tr><th>Case ID</th><th>Worker</th><th>Employer</th><th>Agent</th><th>Status</th></tr></thead>
             <tbody id="caseRows">
-              <tr><td class="mono">SJ-2026-04817</td><td>W-2291</td><td>E-0716</td><td>AG-1024</td><td><span class="pill pill--amber">Meeting fixed</span></td></tr>
-              <tr><td class="mono">SJ-2026-04811</td><td>W-2287</td><td>E-0702</td><td>AG-1019</td><td><span class="pill pill--green">Verified</span></td></tr>
-              <tr><td class="mono">SJ-2026-04806</td><td>W-2270</td><td>E-0688</td><td>AG-1024</td><td><span class="pill pill--blue">Docs review</span></td></tr>
-              <tr><td class="mono">SJ-2026-04799</td><td>W-2262</td><td>E-0671</td><td>AG-1008</td><td><span class="pill pill--red">Fraud flag</span></td></tr>
+              <tr><td class="mono">RH-2026-04817</td><td>W-2291</td><td>E-0716</td><td>AG-1024</td><td><span class="pill pill--amber">Meeting fixed</span></td></tr>
+              <tr><td class="mono">RH-2026-04811</td><td>W-2287</td><td>E-0702</td><td>AG-1019</td><td><span class="pill pill--green">Verified</span></td></tr>
+              <tr><td class="mono">RH-2026-04806</td><td>W-2270</td><td>E-0688</td><td>AG-1024</td><td><span class="pill pill--blue">Docs review</span></td></tr>
+              <tr><td class="mono">RH-2026-04799</td><td>W-2262</td><td>E-0671</td><td>AG-1008</td><td><span class="pill pill--red">Fraud flag</span></td></tr>
             </tbody>
           </table>
         </div>
-        <p class="tiny muted mono">Demo data</p>
+        <div class="alerts-live">
+          <div class="al al--red"><b>Emergency leave &middot; 28 min</b><span>W-2291 waiting for employer reply</span></div>
+          <div class="al al--amber"><b>Suspicious search</b><span>Same roll no. checked 9 times</span></div>
+          <div class="al al--green"><b>Agent on site</b><span>AG-1024 reached the store &middot; live location</span></div>
+        </div>
+        <p class="tiny muted mono" id="rolePerm">Chief Manager: full control, new officers and agents, fees and promo codes, permanent ban, all finance reports. Demo data.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ PART 9: BADGE, CERTIFICATE, ALERTS ============ -->
+<section class="trust paper" id="trust" data-say="काम पूरा होने पर आपको प्रमाणित एवं विश्वसनीय सदस्य का बैज और क्यूआर कोड वाला अनुभव प्रमाण पत्र मिलता है। हर सूचना ऐप, एसएमएस और व्हाट्सएप पर हिंदी में आती है।">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="mono kicker"><span class="part">PART 9</span> BADGE, CERTIFICATE &amp; ALERTS</p>
+      <h2 class="display">Honest work leaves a <em>record you can show.</em></h2>
+      <p class="hi sub-hi">प्रमाणित बैज &middot; अनुभव प्रमाण पत्र &middot; हिंदी में सूचना</p>
+    </div>
+    <div class="trust__grid">
+      <article class="cert reveal" id="cert">
+        <div class="cert__paper">
+          <div class="cert__top">
+            <svg class="cert__logo"><use href="#i-logo"/></svg>
+            <div><b>Rozgar Hub</b><span class="hi">कार्य अनुभव प्रमाण पत्र</span></div>
+          </div>
+          <p class="mono cert__no">WORK EXPERIENCE CERTIFICATE &middot; RH-EXP-2026-0091</p>
+          <p class="cert__body">This certifies that <b>Ravi Kumar</b> (W-2291) worked as <b>Shop Assistant</b> at a verified store in Jaipur from <b>18 Nov 2026</b> to <b>17 May 2027</b>, with no complaints and a <b>4.8 &#9733;</b> rating.</p>
+          <div class="cert__foot">
+            <div class="qr" aria-label="QR code to verify certificate"></div>
+            <div class="cert__sign"><span class="hand">Control Room</span><span class="tiny mono">SCAN QR TO VERIFY</span></div>
+            <span class="cert__seal" id="certSeal">CERTIFIED</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="trust__side">
+        <article class="card badge reveal">
+          <div class="badge__shield"><svg><use href="#i-shield"/></svg></div>
+          <div>
+            <p class="mono kicker">TRUST BADGE</p>
+            <h3>Verified &amp; Trusted Member</h3>
+            <p class="hi small">प्रमाणित एवं विश्वसनीय सदस्य</p>
+            <p class="small muted">Given after documents are verified and the first job finishes without a dispute. Badge holders get priority in future hiring.</p>
+          </div>
+        </article>
+
+        <article class="card alerts reveal">
+          <div class="alerts__head">
+            <p class="mono kicker">3-CHANNEL ALERTS (HINDI)</p>
+            <button class="btn btn--stamp btn--sm" id="alertBtn" type="button"><svg class="ico"><use href="#i-bell"/></svg> Send test alert</button>
+          </div>
+          <div class="chan" id="chan">
+            <div class="chan__item" data-c="0"><span class="chan__ico"><svg><use href="#i-bell"/></svg></span><div><b>In-app bell</b><span class="hi">नई सूचना: आपकी मीटिंग कल सुबह 11 बजे तय की गई है।</span></div><i class="chan__ok"><svg><use href="#i-check"/></svg></i></div>
+            <div class="chan__item" data-c="1"><span class="chan__ico"><svg><use href="#i-sms"/></svg></span><div><b>SMS</b><span class="hi">रोज़गार हब: केस RH-2026-04817 की मीटिंग 25-11 को 11:00 बजे।</span></div><i class="chan__ok"><svg><use href="#i-check"/></svg></i></div>
+            <div class="chan__item" data-c="2"><span class="chan__ico chan__ico--wa"><svg><use href="#i-chat"/></svg></span><div><b>WhatsApp</b><span class="hi">दस्तावेज़ स्वीकृत &#10003; डिजिटल रसीद तैयार है।</span></div><i class="chan__ok"><svg><use href="#i-check"/></svg></i></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="secure reveal">
+      <div><b class="mono">XXXX-XXXX-1234</b><span>Aadhaar masked: only last 4 digits shown</span></div>
+      <div><b>Encrypted</b><span>Files, agreements, videos and payments stored encrypted</span></div>
+      <div><b>Daily backup</b><span>Automatic copy every night to a separate safe location</span></div>
+      <div><b class="hi">सुनें &#128266;</b><span>Every page has a Hindi audio guide button</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART 10 + 11: SALARY GUARANTEE ============ -->
+<section class="salary dark" id="salary" data-say="वेतन गारंटी में मालिक हर महीने दो या तीन तारीख तक वेतन संस्था के खाते में जमा करता है, और कर्मचारी को समय पर पूरा वेतन मिलता है। वेतन में बदलाव, अग्रिम भुगतान और एक लाख रुपये की परिवार सुरक्षा सहायता भी इसी में है।">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="mono kicker"><span class="part">PART 10 + 11</span> SALARY GUARANTEE &amp; FAMILY PROTECTION</p>
+      <h2 class="display">Salary on time, every month.<br><em>Guaranteed.</em></h2>
+      <p class="hi sub-hi">सुरक्षित वेतन गारंटी &middot; सैलरी एडिट &middot; अग्रिम भुगतान &middot; &#8377;1 लाख सुरक्षा</p>
+    </div>
+
+    <div class="sal">
+      <!-- guarantee calculator -->
+      <article class="scard sal--calc reveal">
+        <p class="mono kicker">DUAL SALARY OPTION</p>
+        <div class="seg" id="payOpt">
+          <button class="is-on" data-opt="a" type="button">A &middot; Through Rozgar Hub</button>
+          <button data-opt="b" type="button">B &middot; Direct bank</button>
+        </div>
+        <label class="rng"><span>Monthly salary</span><output class="mono" id="salOut">&#8377;15,000</output></label>
+        <input type="range" id="salRange" min="8000" max="40000" step="500" value="15000" aria-label="Monthly salary">
+        <div id="feeWrap">
+          <label class="rng"><span>Guarantee service fee</span><output class="mono" id="feeOut">2%</output></label>
+          <input type="range" id="feeRange" min="2" max="3" step="0.5" value="2" aria-label="Service fee percent">
+        </div>
+        <div class="slip">
+          <div><span>Employer deposits by 2nd&ndash;3rd</span><b class="mono" id="slDep">&#8377;15,000</b></div>
+          <div id="slFeeRow"><span>Service fee</span><b class="mono t-red" id="slFee">&minus;&#8377;300</b></div>
+          <div class="slip__tot"><span>Worker receives</span><b class="mono" id="slNet">&#8377;14,700</b></div>
+          <p class="small" id="slNote"><svg class="ico t-green"><use href="#i-shield"/></svg> Rozgar Hub is responsible for paying the full salary on time.</p>
+        </div>
+      </article>
+
+      <!-- deposit calendar + late rule -->
+      <article class="scard sal--dep reveal">
+        <p class="mono kicker">EMPLOYER DEPOSIT RULE</p>
+        <div class="month" id="month"></div>
+        <ul class="dep">
+          <li class="ok"><b>Nov</b> deposited on 2 Nov <span class="pill pill--green">On time</span></li>
+          <li id="decRow"><b>Dec</b> due by 3 Dec <span class="pill pill--blue" id="decPill">Waiting</span></li>
+        </ul>
+        <button class="btn btn--ghost btn--sm" id="lateBtn" type="button">Simulate late deposit</button>
+        <p class="small muted" id="lateNote">If the deposit is 1&ndash;2 days late, a late penalty applies and the employer account is frozen. The platform recovers it from the security deposit.</p>
+        <span class="stamp stamp--red frozen" id="frozen">ACCOUNT FROZEN</span>
+      </article>
+
+      <!-- edit salary -->
+      <article class="scard sal--edit reveal">
+        <p class="mono kicker">EDIT SALARY &middot; MUTUAL CONSENT</p>
+        <div class="edit">
+          <div class="edit__from"><span class="small muted">Current</span><b class="mono">&#8377;15,000</b></div>
+          <svg class="edit__arrow" viewBox="0 0 40 12"><path d="M0 6h36M30 1l6 5-6 5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <div class="edit__to"><span class="small muted">New</span><b class="mono">&#8377;16,500</b></div>
+        </div>
+        <p class="small">Reason: <i>Excellent work, 6 months completed</i> &middot; From 1 Dec</p>
+        <div class="notif" id="editNotif">
+          <span class="hi">वेतन बदलाव अनुरोध &middot; मालिक ने नया वेतन &#8377;16,500 भेजा है</span>
+          <div class="notif__btns"><button class="btn btn--stamp btn--sm" id="acceptBtn" type="button">Accept / स्वीकार</button></div>
+        </div>
+        <span class="stamp stamp--green applied" id="applied">NEW SALARY ACTIVE</span>
+      </article>
+
+      <!-- pay cycle + advance -->
+      <article class="scard sal--cycle reveal">
+        <p class="mono kicker">PAY CYCLE &amp; ADVANCE</p>
+        <div class="seg seg--3" id="cycle">
+          <button data-c="7" type="button">Weekly</button>
+          <button data-c="15" type="button">15 days</button>
+          <button class="is-on" data-c="30" type="button">Monthly</button>
+        </div>
+        <div class="slip">
+          <div><span>Days worked (from duty timer)</span><b class="mono" id="cyDays">26 / 30</b></div>
+          <div class="slip__tot"><span>Earned this cycle</span><b class="mono" id="cyPay">&#8377;13,000</b></div>
+        </div>
+        <label class="rng"><span>Advance request</span><output class="mono" id="advOut">&#8377;3,000</output></label>
+        <input type="range" id="advRange" min="500" max="6000" step="500" value="3000" aria-label="Advance amount">
+        <p class="small muted">Limit: 40% of salary, within the security deposit. Needs employer approval. Adjusted automatically in the next pay.</p>
+        <button class="btn btn--ink btn--sm" id="advBtn" type="button">Request advance</button>
+        <p class="small t-green adv-ok" id="advOk"></p>
+      </article>
+
+      <!-- tools -->
+      <article class="scard sal--tools reveal">
+        <p class="mono kicker">MORE TOOLS</p>
+        <div class="tools" id="tools">
+          <button type="button" data-t="0"><b>Replacement</b><span class="hi">प्रतिस्थापन अनुरोध</span></button>
+          <button type="button" data-t="1"><b>Resign &amp; settle</b><span class="hi">इस्तीफ़ा एवं हिसाब</span></button>
+          <button type="button" data-t="2"><b>Account pause</b><span class="hi">खाता विराम</span></button>
+          <button type="button" data-t="3"><b>Work history</b><span class="hi">पूरा कार्य इतिहास</span></button>
+        </div>
+        <div class="tool-out small" id="toolOut">Tap a tool to see what happens.</div>
+      </article>
+
+      <!-- life protection -->
+      <article class="scard sal--life reveal">
+        <div class="life__img"><img src="assets/img/worker-meena.jpg" alt="Woman worker at her workplace" loading="lazy"></div>
+        <div class="life__txt">
+          <p class="mono kicker">&#8377;1,00,000 FAMILY PROTECTION</p>
+          <h3 class="display">If the worst happens, <em>the family is not alone.</em></h3>
+          <p class="hi small">आपका परिवार, हमारी ज़िम्मेदारी</p>
+          <ol class="claim" id="claim">
+            <li><b>Nominee registered</b><span>At signup: name, relation, Aadhaar, bank</span></li>
+            <li><b>Incident reported</b><span>Family or agent informs the helpline</span></li>
+            <li><b>Verified in 2&ndash;3 days</b><span>Agent visits, documents checked</span></li>
+            <li><b>&#8377;1,00,000 paid in 8&ndash;9 days</b><span>Direct to the nominee's bank, receipt on SMS</span></li>
+          </ol>
+          <p class="tiny muted">For workers and agents who choose the protection plan. Runs with a licensed insurance partner; the app manages nominee, claim and payment records.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CASE CLOSED ============ -->
-<section class="closed dark" id="closed">
+<section class="closed dark" id="closed" data-say="काम पूरा, दोनों पक्ष खुश। वीडियो समीक्षा के बाद केस सफलतापूर्वक बंद।">
   <video class="closed__video" autoplay muted loop playsinline preload="none" poster="assets/video/golden-street.jpg">
     <source src="assets/video/golden-street.mp4" type="video/mp4">
   </video>
   <div class="closed__shade"></div>
   <div class="wrap closed__inner">
-    <p class="mono kicker">FINAL ENTRY &middot; SJ-2026-04817</p>
+    <p class="mono kicker">FINAL ENTRY &middot; RH-2026-04817</p>
     <h2 class="display closed__h">Job done. Both sides happy.<br><em>Case closed.</em></h2>
+    <p class="hi sub-hi">मामला सफलतापूर्वक बंद</p>
     <div class="vids">
       <figure class="vcard reveal">
         <img src="assets/img/worker-smile.jpg" alt="Smiling worker at her workplace" loading="lazy">
@@ -641,13 +848,15 @@
 
 </main>
 
+<button class="listen" id="listen" type="button" aria-label="Listen in Hindi"><svg><use href="#i-volume"/></svg><span class="hi">सुनें</span></button>
+
 <footer class="foot paper">
   <div class="wrap foot__grid">
     <div>
-      <a href="#top" class="brand brand--ink"><svg class="brand__seal"><use href="#i-seal"/></svg><span>Suraksha<b>Job</b></span></a>
-      <p class="small muted">Safe jobs. Verified people. One control room.</p>
+      <a href="#top" class="brand brand--ink"><svg class="brand__logo"><use href="#i-logo"/></svg><span class="brand__txt">Rozgar <b>Hub</b><small>रोज़गार हब</small></span></a>
+      <p class="small muted hi">सत्य &middot; सेवा &middot; न्याय</p>
     </div>
-    <p class="small muted">Demo concept for the Secure Job Provider &amp; Verification Portal (Android app + web admin). Brand name, people and numbers are placeholders. Photos and video: Pexels (free license).</p>
+    <p class="small muted">Clickable demo of the Rozgar Hub Android app and web admin panel, all 11 parts. People, IDs and numbers are sample data. Photos and video: Pexels (free license).</p>
   </div>
 </footer>
 

@@ -5,3 +5,6 @@ Thumbs.db
 .env
 .env.*
 node_modules/
+
+# client documents - never commit
+*.pdf
