@@ -8,3 +8,8 @@ node_modules/
 
 # client documents - never commit
 *.pdf
+
+# client files - never commit
+*.rar
+*.zip
+*.apk
